@@ -11,10 +11,10 @@ import { GenrePipe } from './genre.pipe'
   <option value="all">View All</option>
   <option value="rock">View Rock</option>
   <option value="rap">View Rap</option>
-  <option value="pop">View Rap</option>
+  <option value="pop">View Pop</option>
 
   </select>
-  <div *ngFor="#currentMusic of MusicList" (click)="MusicClicked(currentMusic)"
+  <div *ngFor="#currentMusic of MusicList | genre:selectedGenre" (click)="MusicClicked(currentMusic)"
     [class.selected]="currentMusic === selectedMusic">
   <h3>{{currentMusic.artist}} | {{currentMusic.year}}  | {{currentMusic.genre}} | {{currentMusic.price| currency:"USD":true:"1.2-4"}} </h3>
   <form *ngIf="currentMusic === selectedMusic">

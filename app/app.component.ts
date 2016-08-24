@@ -19,11 +19,11 @@ export class AppComponent {
   public music: Music[];
   constructor() {
     this.music = [
-      new Music("Miller",2013, "Watery", 21, 0),
-      new Music("Guiness",2013, "Dark", 21, 1),
-      new Music("Shocktop",2013, "Light", 21, 2),
-      new Music("Ocktoberfest",2013, "Dark", 21, 3),
-      new Music("Corona",2013, "Watery", 21, 4)
+      new Music("Miller",2013, "rock", 21, 0),
+      new Music("Guiness",2013, "rock", 21, 1),
+      new Music("Shocktop",2013, "rock", 21, 2),
+      new Music("Ocktoberfest",2013, "rap", 21, 3),
+      new Music("Corona",2013, "pop", 21, 4)
     ];
   }
   createMusic(MusicDetail:string[]):void{
