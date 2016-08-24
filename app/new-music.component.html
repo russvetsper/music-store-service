@@ -1,9 +1,11 @@
-<form class="">
-  <label for="">Name</label>
-  <input type="text" name="name" value="" #newKegName>
-  <label for="">Type</label>
-  <input type="text" name="name" value="" #newKegType>
-  <label for="">Person</label>
-  <input type="text" name="name" value="" #newKegPerson>
-  <button class="add-button" (click)="addKeg(newKegName,newKegType,newKegPerson)">Add</button>
+<form class="add-new-music">
+  <label for="">artist</label>
+  <input class="form-control" type="text" name="name" value="" #newMusicArtist>
+  <label for="">year</label>
+  <input class="form-control" type="text" name="name" value="" #newMusicYear>
+  <label for="">genre</label>
+  <input  class="form-control" type="text" name="name" value="" #newMusicGenre>
+  <label for="">Price</label>
+  <input  class="form-control" type="text" name="name" value="" #newMusicPrice>
+  <button class="add-button btn btn-primary btn-block" (click)="addMusic(newMusicArtist,newMusicYear,newMusicGenre,newMusicPrice)">Add</button>
 </form>
