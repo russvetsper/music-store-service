@@ -5,7 +5,6 @@ import {MusicItemService } from './music-item.service';
 @Component({
   selector: 'music-list',
   inputs: ['MusicList'],
-  providers:[MusicItemService],
   pipes:[GenrePipe],
   template:  `
   <select (change)="onChange($event.target.value)" class="filter">
@@ -23,7 +22,6 @@ import {MusicItemService } from './music-item.service';
   <input  [(ngModel)]="currentMusic.year">
   <input  [(ngModel)]="currentMusic.genre">
   <input  [(ngModel)]="currentMusic.price " type="number"  aria-label="amount">
-
   </form>
   </div>
   `

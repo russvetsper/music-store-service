@@ -1,7 +1,9 @@
 import { Component, EventEmitter } from 'angular2/core';
-import { Music } from './music.model'
-import { MusicListComponent } from './music-list.component'
-import { addMusicComponent } from './new-music.component'
+import { Music } from './music.model';
+import { MusicListComponent } from './music-list.component';
+import { addMusicComponent } from './new-music.component';
+import {MusicItemService } from './music-item.service';
+
 @Component({
   selector: 'my-app',
   directives:[MusicListComponent,addMusicComponent],
@@ -24,22 +26,16 @@ import { addMusicComponent } from './new-music.component'
 })
 export class AppComponent {
   public music: Music[];
-  constructor() {
-    this.music = [
-      new Music("Miller",2013, "rock", 21, 0),
-      new Music("Guiness",2013, "rock", 21, 1),
-      new Music("Shocktop",2013, "rock", 21, 2),
-      new Music("Ocktoberfest",2013, "rap", 21, 3),
-      new Music("Corona",2013, "pop", 21, 4)
-    ];
+  constructor(private musicItemService:MusicItemService) {
+
   }
   createMusic(MusicDetail:string[]):void{
     var tempYear : number = parseInt(MusicDetail[1]);
     var tempPrice : number = parseInt(MusicDetail[3]);
-
-    this.music.push(
-       new Music(MusicDetail[0], tempYear, MusicDetail[2], tempPrice, this.music.length)
-     );
+    var tempListMusic= this.musicItemService.get();
+    this.musicItemService.add(new Music(MusicDetail[0], tempYear, MusicDetail[2], tempPrice, tempListMusic.length));
+    console.log("submit");
   }
+
 
 }

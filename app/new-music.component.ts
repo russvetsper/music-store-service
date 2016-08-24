@@ -22,4 +22,5 @@ addMusic(artist:HTMLInputElement,year:HTMLInputElement,genre:HTMLInputElement,pr
   price.value = "";
 
 }
+
 }

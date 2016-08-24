@@ -3,7 +3,7 @@ export class MusicItemService{
   get(){
     return this.musicItems;
   }
-  add(musicItem){
+  add(musicItem:Music){
     this.musicItems.push(musicItem);
   }
   delete(MusicId){
@@ -13,7 +13,7 @@ export class MusicItemService{
       }
     }
   }
-  musicItems=[
+  musicItems:Music[]=[
         new Music("Miller",2013, "rock", 21, 0),
         new Music("Guiness",2013, "rock", 21, 1),
         new Music("Shocktop",2013, "rock", 21, 2),
