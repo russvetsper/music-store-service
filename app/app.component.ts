@@ -9,8 +9,15 @@ import { addMusicComponent } from './new-music.component'
     <div class="container">
       <h1>Music Inventory</h1>
       <h2>Add New Music Now</h2>
+      <div class="row">
+      <div class="col-xs-6">
       <music-list></music-list>
+      </div>
+      <div class="col-xs-6">
+
       <add-music (onSubmitNewMusic)="createMusic($event)"></add-music>
+      </div>
+      </div>
 
     </div>
   `

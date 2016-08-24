@@ -5,7 +5,7 @@ import {MusicItemService } from './music-item.service';
 @Component({
   selector: 'music-list',
   inputs: ['MusicList'],
-  providers:['MusicItemService'],
+  providers:[MusicItemService],
   pipes:[GenrePipe],
   template:  `
   <select (change)="onChange($event.target.value)" class="filter">
@@ -18,7 +18,7 @@ import {MusicItemService } from './music-item.service';
   <div *ngFor="#currentMusic of MusicList | genre:selectedGenre" (click)="MusicClicked(currentMusic)"
     [class.selected]="currentMusic === selectedMusic">
   <h3>{{currentMusic.artist}} | {{currentMusic.year}}  | {{currentMusic.genre}} | {{currentMusic.price| currency:"USD":true:"1.2-4"}} </h3>
-  <form *ngIf="currentMusic === selectedMusic">
+  <form class="listOfMusic" *ngIf="currentMusic === selectedMusic">
   <input  [(ngModel)]="currentMusic.artist">
   <input  [(ngModel)]="currentMusic.year">
   <input  [(ngModel)]="currentMusic.genre">

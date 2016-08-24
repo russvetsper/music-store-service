@@ -4,7 +4,6 @@
   text-align: center;
   margin-right: auto;
   margin-left: auto;
-  width: 40%;
   color: antiquewhite;
   padding: 20px;
   font-size: 34px;
@@ -16,7 +15,6 @@ h3 {
   text-align: center;
   margin-right: auto;
   margin-left: auto;
-  width: 40%;
   color: white;
   padding: 20px;
 }
@@ -60,7 +58,6 @@ form.add-new-music {
     text-align: center;
     margin-top: 10%;
     background-color: cornsilk;
-    width: 60%;
     margin-right: auto;
     margin-left: auto;
 }
@@ -76,4 +73,7 @@ font-family: cursive;
 letter-spacing: 5px;
 font-size: 2vh;
 color: green;
+}
+.listOfMusic Input{
+  width: 100%;
 }
