@@ -12,7 +12,7 @@ import { Music } from './music.model'
   <input  [(ngModel)]="currentMusic.artist">
   <input  [(ngModel)]="currentMusic.year">
   <input  [(ngModel)]="currentMusic.genre">
-  <input  [(ngModel)]="currentMusic.price">
+  <input  [(ngModel)]="currentMusic.price " type="number"  aria-label="amount">
 
   </form>
   </div>
