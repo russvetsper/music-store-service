@@ -9,7 +9,7 @@ import { addMusicComponent } from './new-music.component'
     <div class="container">
       <h1>Music Inventory</h1>
       <h2>Add New Music Now</h2>
-      <music-list [MusicList]="music"></music-list>
+      <music-list></music-list>
       <add-music (onSubmitNewMusic)="createMusic($event)"></add-music>
 
     </div>

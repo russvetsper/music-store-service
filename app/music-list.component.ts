@@ -1,10 +1,11 @@
 import { Component,EventEmitter } from 'angular2/core';
 import { Music } from './music.model'
 import { GenrePipe } from './genre.pipe'
-
+import {MusicItemService } from './music-item.service';
 @Component({
   selector: 'music-list',
   inputs: ['MusicList'],
+  providers:['MusicItemService'],
   pipes:[GenrePipe],
   template:  `
   <select (change)="onChange($event.target.value)" class="filter">
@@ -31,7 +32,7 @@ export class MusicListComponent{
   public MusicList:Music[];
   public selectedMusic:Music;
   public selectedGenre:string;
-
+  constructor(private musicItemService:MusicItemService){}
   MusicClicked(currentMusic:Music):void{
     this.selectedMusic=currentMusic;
   }
@@ -39,5 +40,7 @@ export class MusicListComponent{
   onChange(optionFromMenu) {
   this.selectedGenre = optionFromMenu;
 }
-
+ngOnInit(optionFromMenu) {
+this.MusicList = this.musicItemService.get();
+}
 }
