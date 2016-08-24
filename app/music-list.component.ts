@@ -22,7 +22,9 @@ import {MusicItemService } from './music-item.service';
   <input  [(ngModel)]="currentMusic.year">
   <input  [(ngModel)]="currentMusic.genre">
   <input  [(ngModel)]="currentMusic.price " type="number"  aria-label="amount">
+
   </form>
+  <button class="btn btn-info btn-block" (click)=DeletedClicked(currentMusic.id) >Delete</button>
   </div>
   `
 })
@@ -32,7 +34,10 @@ export class MusicListComponent{
   public selectedGenre:string;
   constructor(private musicItemService:MusicItemService){}
   MusicClicked(currentMusic:Music):void{
-    this.selectedMusic=currentMusic;
+    console.log(this.selectedMusic===currentMusic);
+
+      this.selectedMusic=currentMusic;
+    
   }
 
   onChange(optionFromMenu) {
@@ -40,5 +45,11 @@ export class MusicListComponent{
 }
 ngOnInit(optionFromMenu) {
 this.MusicList = this.musicItemService.get();
+}
+DeletedClicked(currentMusicID) {
+ this.musicItemService.delete(currentMusicID);
+}
+changeSelectedMusic(currentMusicID) {
+ this.selectedMusic=new Music("wew",2323,"erwe",2323,100);
 }
 }
