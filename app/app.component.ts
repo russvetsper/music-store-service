@@ -3,7 +3,7 @@ import { Music } from './music.model';
 import { MusicListComponent } from './music-list.component';
 import { addMusicComponent } from './new-music.component';
 import {MusicItemService } from './music-item.service';
-
+import {RouteConfig } from 'angular2/router';
 @Component({
   selector: 'my-app',
   directives:[MusicListComponent,addMusicComponent],

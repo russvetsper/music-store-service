@@ -14,9 +14,9 @@ import {MusicItemService } from './music-item.service';
   <option value="pop">View Pop</option>
 
   </select>
-  <div *ngFor="#currentMusic of MusicList | genre:selectedGenre" (click)="MusicClicked(currentMusic)"
+  <div *ngFor="#currentMusic of MusicList | genre:selectedGenre" 
     [class.selected]="currentMusic === selectedMusic">
-  <h3>{{currentMusic.artist}} | {{currentMusic.year}}  | {{currentMusic.genre}} | {{currentMusic.price| currency:"USD":true:"1.2-4"}} </h3>
+  <div (click)="MusicClicked(currentMusic)"><h3>{{currentMusic.artist}} | {{currentMusic.year}}  | {{currentMusic.genre}} | {{currentMusic.price| currency:"USD":true:"1.2-4"}} </h3></div>
   <form class="listOfMusic" *ngIf="currentMusic === selectedMusic">
   <input  [(ngModel)]="currentMusic.artist">
   <input  [(ngModel)]="currentMusic.year">
@@ -35,10 +35,13 @@ export class MusicListComponent{
   constructor(private musicItemService:MusicItemService){}
   MusicClicked(currentMusic:Music):void{
     console.log(this.selectedMusic===currentMusic);
-
-      this.selectedMusic=currentMusic;
-    
-  }
+if(this.selectedMusic===currentMusic)
+{
+  this.selectedMusic=null;
+}else{
+  this.selectedMusic=currentMusic;
+}
+}
 
   onChange(optionFromMenu) {
   this.selectedGenre = optionFromMenu;
